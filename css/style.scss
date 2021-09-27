@@ -1,0 +1,271 @@
+$color-main: #8da9ca;
+$color-light: #bed6f7;
+$color-two: #c73117;
+$color-three: #43bf84;
+$color-four: #8ac4db;
+$color-five: #43bf84;
+$font-title: "Abril Fatface", cursive;
+$font-text: "Open Sans", sans-serif;
+
+*,
+*::before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+::-webkit-scrollbar {
+  width: 11px;
+  height: 11px;
+}
+::-webkit-scrollbar-thumb {
+  background: #8a8a8a;
+  border: 0.5px solid #ffffff;
+  border-radius: 17px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #4a4a4a;
+}
+::-webkit-scrollbar-track {
+  background: #f5f5f5;
+  border-radius: 0px;
+  box-shadow: inset 0px -0.2px 24px -25px #f0f0f0;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: $font-text;
+  background-color: white;
+}
+.layout {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+header {
+  scroll-snap-align: start;
+  background-color: $color-main;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+}
+
+section {
+  scroll-snap-align: start;
+  height: 100vh;
+  width: 100vw;
+  // margin: 2vh;
+}
+
+h1 {
+  padding-top: 15vh;
+  font-size: 56px;
+  text-align: center;
+  font-family: $font-title;
+  letter-spacing: 10px;
+  // text-shadow: 1px 1px black;
+}
+
+h2 {
+  font-family: $font-text;
+  // text-transform: uppercase;
+}
+
+.navigation {
+  position: fixed;
+  height: 90vh;
+  margin: 3vh;
+  width: 90px;
+  border-right: 2px solid black;
+  z-index: 10;
+  border-radius: 40px;
+  & li {
+    border-radius: 40px 0 0 40px;
+  }
+  & a {
+    font-size: 40px;
+    color: black;
+    width: 80px;
+    height: 80px;
+    padding: 10px;
+  }
+
+  & img {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  justify-content: space-around;
+  flex-direction: column;
+  height: 50%;
+}
+
+.nav-links li {
+  letter-spacing: 5px;
+  max-width: 90px;
+  transition: 0.2s ease;
+
+  & a {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+  }
+}
+.nav-links span {
+  width: 0;
+  height: 80px;
+  border-radius: 0 40px 40px 0;
+  position: absolute;
+  top: 0;
+  right: 450px;
+  transition: translateY(-70px);
+  padding-top: 15px;
+  // transition: 0.7s ease;
+}
+
+.nav-links li:hover {
+  background-color: white;
+
+  & li {
+    background-color: white;
+  }
+  & span {
+    width: 480px;
+    color: black;
+    left: 70px;
+    background-color: white;
+    transition: 0.2s ease;
+  }
+}
+
+#services {
+  background-color: $color-two;
+  position: relative;
+}
+
+header .wrapper {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  & .name {
+    padding-top: 0;
+  }
+  & .motto {
+    font-style: italic;
+    margin-top: 15vh;
+    text-align: center;
+    font-size: 24px;
+  }
+}
+
+.subtitle {
+  text-align: center;
+}
+
+.arrow,
+.arrow:before,
+.arrow:after {
+  position: absolute;
+  left: 50%;
+}
+
+.arrow {
+  top: 120%;
+  -webkit-transform: rotate(45deg);
+}
+
+.arrow:before {
+  content: "";
+  width: 25px;
+  height: 25px;
+  top: 50%;
+  margin: 10px 0 0 10px;
+  border-left: none;
+  border-top: none;
+  border-right: 1px #fff solid;
+  border-bottom: 1px #fff solid;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-name: arrow;
+}
+.arrow:after {
+  content: "";
+  width: 25px;
+  height: 25px;
+  top: 50%;
+  margin: 20px 0 0 20px;
+  border-left: none;
+  border-top: none;
+  border-right: 1px #fff solid;
+  border-bottom: 1px #fff solid;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-name: arrow;
+}
+#services .container {
+  display: grid;
+  place-items: center;
+}
+
+.service-wrapper {
+  display: flex;
+  // justify-content: left;
+}
+.service-pic {
+  width: 80px;
+  // filter: invert(89%) sepia(4%) saturate(3845%) hue-rotate(183deg)
+  // brightness(93%) contrast(110%);
+}
+
+.service-wrapper h2 {
+  font-size: 32px;
+  // position: relative;
+  // top: 50%;
+  margin: auto 0 auto 50px;
+}
+// .pic-wrapper {
+//   // transition: transform 0.8s;
+// }
+.pic-wrapper:hover {
+  // animation: rotateY 0.5s;
+  // animation-timing-function: linear;
+  transform: rotateY(360deg);
+  transition: transform 0.8s;
+}
+
+#about {
+  background-color: $color-five;
+}
+
+#contact {
+  background-color: $color-four;
+  height: 97vh;
+}
+footer {
+  height: 3vh;
+  width: 100vw;
+  background-color: #363636;
+  color: rgb(175, 175, 175);
+  text-align: center;
+  padding: 5px;
+  font-size: 15px;
+}
+
+@keyframes arrow {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translate(10px, 10px);
+  }
+}
