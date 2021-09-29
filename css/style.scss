@@ -1,10 +1,10 @@
 $color-main: #7f8fa6;
 $color-light: #f5f6fa;
 $color-two: #40739e;
-$color-three: #7f8fa6;
+$color-three: #8698a2;
 $color-four: #0097e6;
-$color-five: #43bf84;
-// $color-main: #8da9ca;
+$color-font: #363435;
+$color-dark: #363435;
 // $color-light: #bed6f7;
 // $color-two: #c73117;
 // $color-three: #43bf84;
@@ -41,6 +41,7 @@ $font-text: "Open Sans", sans-serif;
 body {
   overflow-x: hidden;
   font-family: $font-text;
+  color: #000000;
   // background-color: white;
 }
 .layout {
@@ -51,10 +52,10 @@ body {
   overflow-x: hidden;
   scroll-behavior: smooth;
 }
-
 header {
   scroll-snap-align: start;
-  background-color: $color-main;
+  // background-color: $color-main;
+  background: linear-gradient(180deg, $color-main 0%, $color-three 100%);
   height: 100vh;
   width: 100vw;
   position: relative;
@@ -73,12 +74,11 @@ h1 {
   text-align: center;
   font-family: $font-title;
   letter-spacing: 10px;
-  // text-shadow: 1px 1px black;
+  margin-bottom: 50px;
 }
 
 h2 {
   font-family: $font-text;
-  // text-transform: uppercase;
 }
 
 .navigation {
@@ -166,7 +166,6 @@ h2 {
 
 #services {
   background-color: $color-two;
-  position: relative;
 }
 
 header .wrapper {
@@ -230,8 +229,11 @@ header .wrapper {
 //   animation-name: arrow;
 // }
 
-/*Services*/
-
+/////////////////*Services*/////////////////
+#services {
+  position: relative;
+  background: linear-gradient(180deg, $color-three 0%, rgb(74, 130, 160) 100%);
+}
 #services .container {
   display: flex;
   justify-content: center;
@@ -253,10 +255,14 @@ header .wrapper {
   margin: auto 0 auto 50px;
 }
 
-/*About*/
+//////////////////*About*//////////////////////
 
 #about {
-  background-color: $color-three;
+  background: linear-gradient(
+    180deg,
+    rgb(74, 130, 160),
+    rgb(30, 109, 151) 100%
+  );
 }
 
 #about .container {
@@ -278,19 +284,20 @@ header .wrapper {
   text-align: center;
 }
 
+//////////////////*Contact*/////////////////////////
+
 #contact {
-  background-color: $color-four;
+  // background-color: $color-four;
+  background: linear-gradient(180deg, rgb(30, 109, 151) 0%, $color-four 100%);
   height: 97vh;
 }
 #contact .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 900px;
+  width: 980px;
   margin: auto;
 }
-
-/*Contact*/
 
 .contact-form {
   display: flex;
@@ -298,7 +305,7 @@ header .wrapper {
   flex-direction: column;
   position: relative;
   overflow: hidden;
-  margin-top: 50px;
+  // margin-top: 50px;
 }
 
 .name-wrapper,
@@ -306,7 +313,7 @@ header .wrapper {
 .phone-wrapper,
 .message-wrapper {
   position: relative;
-  margin-top: 30px;
+  margin-top: 50px;
 }
 
 .name-wrapper .label-name,
@@ -318,7 +325,6 @@ header .wrapper {
   left: 0%;
   width: 100%;
   height: 100%;
-  // background-color: white;
   pointer-events: none;
   border-bottom: 1px solid black;
   font-size: 18px;
@@ -337,9 +343,7 @@ header .wrapper {
 
 .contact-form input,
 textarea {
-  // margin-top: 20px;
-  // color: chocolate;
-  background-color: $color-four;
+  background-color: inherit;
   width: 100%;
   height: 100%;
   border: none;
@@ -371,19 +375,19 @@ textarea {
 input:focus + .label-email .content-email,
 input:focus + .label-phone .content-phone,
 textarea:focus + .label-message .content-message {
-  transform: translateY(-150%);
+  transform: translateY(-230%);
   font-size: 14px;
   color: white;
 }
 .contact-form textarea:focus + .label-message .content-message {
-  transform: translateY(-750%);
+  transform: translateY(-825%);
   font-size: 14px;
   color: white;
 }
 .contact-form input:valid + .label-name .content-name,
 .contact-form input:not(:placeholder-shown) + .label-email .content-email,
 .contact-form input:not(:placeholder-shown) + .label-phone .content-phone {
-  transform: translateY(-150%);
+  transform: translateY(-230%);
   font-size: 14px;
   color: white;
 }
@@ -392,7 +396,7 @@ textarea:focus + .label-message .content-message {
   textarea:not(:placeholder-shown)
   + .label-message
   .content-message {
-  transform: translateY(-750%);
+  transform: translateY(-825%);
   font-size: 14px;
   color: white;
 }
@@ -409,13 +413,51 @@ textarea:focus + .label-message .content-message {
 }
 
 .section-contact {
-  margin-top: 90px;
+  margin-top: 60px;
 }
 .section-contact h3 {
   font-size: 18px;
   padding: 20px;
-  margin-left: 100px;
+  margin-left: 80px;
   letter-spacing: 2px;
+}
+
+// .btn-send {
+//   margin-top: 20px;
+//   width: 150px;
+//   height: 50px;
+//   background-color: white;
+//   color: black;
+//   border-radius: 10px;
+//   font-size: 18px;
+// }
+// .btn-send:hover {
+//   background-color: rgb(128, 132, 179);
+// }
+.btn-send {
+  background-color: $color-dark;
+  border-radius: 0.6em;
+  font-size: 18px;
+  cursor: pointer;
+  margin-top: 20px;
+  letter-spacing: 2px;
+  width: 150px;
+  height: 50px;
+  border-color: $color-four;
+  color: #fff;
+  background-image: -webkit-linear-gradient(
+    45deg,
+    $color-four 50%,
+    transparent 50%
+  );
+  background-image: linear-gradient(45deg, white 50%, transparent 50%);
+  background-position: 100%;
+  background-size: 400%;
+  transition: background 300ms ease-in-out;
+}
+.btn-send:hover {
+  background-position: 0;
+  color: $color-dark;
 }
 
 footer {
@@ -434,6 +476,6 @@ footer {
   }
   100% {
     opacity: 1;
-    transform: translate(10px, 10px);
+    transform: translate(50px, 50px);
   }
 }
