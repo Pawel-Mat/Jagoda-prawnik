@@ -1,9 +1,15 @@
-$color-main: #8da9ca;
-$color-light: #bed6f7;
-$color-two: #c73117;
-$color-three: #43bf84;
-$color-four: #8ac4db;
+$color-main: #7f8fa6;
+$color-light: #f5f6fa;
+$color-two: #40739e;
+$color-three: #7f8fa6;
+$color-four: #0097e6;
 $color-five: #43bf84;
+// $color-main: #8da9ca;
+// $color-light: #bed6f7;
+// $color-two: #c73117;
+// $color-three: #43bf84;
+// $color-four: #8ac4db;
+// $color-five: #43bf84;
 $font-title: "Abril Fatface", cursive;
 $font-text: "Open Sans", sans-serif;
 
@@ -35,11 +41,12 @@ $font-text: "Open Sans", sans-serif;
 body {
   overflow-x: hidden;
   font-family: $font-text;
-  background-color: white;
+  // background-color: white;
 }
 .layout {
   height: 100vh;
   overflow-y: scroll;
+  // overflow-y: hidden;
   scroll-snap-type: y mandatory;
   overflow-x: hidden;
   scroll-behavior: smooth;
@@ -87,7 +94,7 @@ h2 {
   }
   & a {
     font-size: 40px;
-    color: black;
+    color: $color-light;
     width: 80px;
     height: 80px;
     padding: 10px;
@@ -98,6 +105,10 @@ h2 {
     height: 60px;
   }
 }
+
+// .navigation li:last-child {
+//   margin-top: auto;
+// }
 
 .nav-links {
   display: flex;
@@ -144,6 +155,13 @@ h2 {
     background-color: white;
     transition: 0.2s ease;
   }
+}
+
+.temida {
+  position: absolute;
+  width: 30%;
+  right: 0;
+  bottom: 0;
 }
 
 #services {
@@ -193,63 +211,213 @@ header .wrapper {
   border-top: none;
   border-right: 1px #fff solid;
   border-bottom: 1px #fff solid;
-  animation-duration: 1s;
+  animation-duration: 2s;
   animation-iteration-count: infinite;
   animation-name: arrow;
 }
-.arrow:after {
-  content: "";
-  width: 25px;
-  height: 25px;
-  top: 50%;
-  margin: 20px 0 0 20px;
-  border-left: none;
-  border-top: none;
-  border-right: 1px #fff solid;
-  border-bottom: 1px #fff solid;
-  animation-duration: 1s;
-  animation-iteration-count: infinite;
-  animation-name: arrow;
-}
+// .arrow:after {
+//   content: "";
+//   width: 25px;
+//   height: 25px;
+//   top: 50%;
+//   margin: 20px 0 0 20px;
+//   border-left: none;
+//   border-top: none;
+//   border-right: 1px #fff solid;
+//   border-bottom: 1px #fff solid;
+//   animation-duration: 2s;
+//   animation-iteration-count: infinite;
+//   animation-name: arrow;
+// }
+
+/*Services*/
+
 #services .container {
-  display: grid;
-  place-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 650px;
+  margin: auto;
 }
 
 .service-wrapper {
   display: flex;
-  // justify-content: left;
 }
 .service-pic {
   width: 80px;
-  // filter: invert(89%) sepia(4%) saturate(3845%) hue-rotate(183deg)
-  // brightness(93%) contrast(110%);
 }
 
 .service-wrapper h2 {
   font-size: 32px;
-  // position: relative;
-  // top: 50%;
   margin: auto 0 auto 50px;
 }
-// .pic-wrapper {
-//   // transition: transform 0.8s;
-// }
-.pic-wrapper:hover {
-  // animation: rotateY 0.5s;
-  // animation-timing-function: linear;
-  transform: rotateY(360deg);
-  transition: transform 0.8s;
-}
+
+/*About*/
 
 #about {
-  background-color: $color-five;
+  background-color: $color-three;
+}
+
+#about .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 900px;
+  margin: auto;
+}
+#about img,
+.about {
+  width: 400px;
+}
+
+#about p {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.5;
+  text-align: center;
 }
 
 #contact {
   background-color: $color-four;
   height: 97vh;
 }
+#contact .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 900px;
+  margin: auto;
+}
+
+/*Contact*/
+
+.contact-form {
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  margin-top: 50px;
+}
+
+.name-wrapper,
+.email-wrapper,
+.phone-wrapper,
+.message-wrapper {
+  position: relative;
+  margin-top: 30px;
+}
+
+.name-wrapper .label-name,
+.email-wrapper .label-email,
+.phone-wrapper .label-phone,
+.message-wrapper .label-message {
+  position: absolute;
+  bottom: 0px;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  // background-color: white;
+  pointer-events: none;
+  border-bottom: 1px solid black;
+  font-size: 18px;
+}
+.contact-form label::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-bottom: 3px solid $color-light;
+  left: 0px;
+  bottom: -1px;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+}
+
+.contact-form input,
+textarea {
+  // margin-top: 20px;
+  // color: chocolate;
+  background-color: $color-four;
+  width: 100%;
+  height: 100%;
+  border: none;
+  padding-top: 20px;
+  outline: none;
+  resize: none;
+}
+
+.content-name,
+.content-email,
+.content-phone,
+.content-message {
+  position: absolute;
+  bottom: 5px;
+  left: 0px;
+  transition: all 0.3s ease;
+}
+
+.contact-form input,
+textarea {
+  padding: 15px 0 10px 0;
+  font-size: 18px;
+  font-family: $font-text;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.contact-form input:focus + .label-name .content-name,
+input:focus + .label-email .content-email,
+input:focus + .label-phone .content-phone,
+textarea:focus + .label-message .content-message {
+  transform: translateY(-150%);
+  font-size: 14px;
+  color: white;
+}
+.contact-form textarea:focus + .label-message .content-message {
+  transform: translateY(-750%);
+  font-size: 14px;
+  color: white;
+}
+.contact-form input:valid + .label-name .content-name,
+.contact-form input:not(:placeholder-shown) + .label-email .content-email,
+.contact-form input:not(:placeholder-shown) + .label-phone .content-phone {
+  transform: translateY(-150%);
+  font-size: 14px;
+  color: white;
+}
+
+.contact-form
+  textarea:not(:placeholder-shown)
+  + .label-message
+  .content-message {
+  transform: translateY(-750%);
+  font-size: 14px;
+  color: white;
+}
+
+.contact-form input:focus + .label-name::after,
+.contact-form input:valid + .label-name::after,
+.contact-form input:focus + .label-email::after,
+.contact-form input:not(:placeholder-shown) + .label-email::after,
+.contact-form input:focus + .label-phone::after,
+.contact-form input:not(:placeholder-shown) + .label-phone::after,
+.contact-form textarea:focus + .label-message::after,
+.contact-form textarea:not(:placeholder-shown) + .label-message::after {
+  transform: translateX(0%);
+}
+
+.section-contact {
+  margin-top: 90px;
+}
+.section-contact h3 {
+  font-size: 18px;
+  padding: 20px;
+  margin-left: 100px;
+  letter-spacing: 2px;
+}
+
 footer {
   height: 3vh;
   width: 100vw;

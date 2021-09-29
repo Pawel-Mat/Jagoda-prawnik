@@ -32,7 +32,6 @@
 body {
   overflow-x: hidden;
   font-family: "Open Sans", sans-serif;
-  background-color: white;
 }
 
 .layout {
@@ -46,7 +45,7 @@ body {
 
 header {
   scroll-snap-align: start;
-  background-color: #8da9ca;
+  background-color: #7f8fa6;
   height: 100vh;
   width: 100vw;
   position: relative;
@@ -86,7 +85,7 @@ h2 {
 
 .navigation a {
   font-size: 40px;
-  color: black;
+  color: #f5f6fa;
   width: 80px;
   height: 80px;
   padding: 10px;
@@ -158,8 +157,15 @@ h2 {
   transition: 0.2s ease;
 }
 
+.temida {
+  position: absolute;
+  width: 30%;
+  right: 0;
+  bottom: 0;
+}
+
 #services {
-  background-color: #c73117;
+  background-color: #40739e;
   position: relative;
 }
 
@@ -208,36 +214,31 @@ header .wrapper .motto {
   border-top: none;
   border-right: 1px #fff solid;
   border-bottom: 1px #fff solid;
-  -webkit-animation-duration: 1s;
-          animation-duration: 1s;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   -webkit-animation-name: arrow;
           animation-name: arrow;
 }
 
-.arrow:after {
-  content: "";
-  width: 25px;
-  height: 25px;
-  top: 50%;
-  margin: 20px 0 0 20px;
-  border-left: none;
-  border-top: none;
-  border-right: 1px #fff solid;
-  border-bottom: 1px #fff solid;
-  -webkit-animation-duration: 1s;
-          animation-duration: 1s;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
-  -webkit-animation-name: arrow;
-          animation-name: arrow;
-}
-
+/*Services*/
 #services .container {
-  display: -ms-grid;
-  display: grid;
-  place-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 650px;
+  margin: auto;
 }
 
 .service-wrapper {
@@ -255,22 +256,197 @@ header .wrapper .motto {
   margin: auto 0 auto 50px;
 }
 
-.pic-wrapper:hover {
-  -webkit-transform: rotateY(360deg);
-          transform: rotateY(360deg);
-  -webkit-transition: -webkit-transform 0.8s;
-  transition: -webkit-transform 0.8s;
-  transition: transform 0.8s;
-  transition: transform 0.8s, -webkit-transform 0.8s;
+/*About*/
+#about {
+  background-color: #7f8fa6;
 }
 
-#about {
-  background-color: #43bf84;
+#about .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 900px;
+  margin: auto;
+}
+
+#about img,
+.about {
+  width: 400px;
+}
+
+#about p {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.5;
+  text-align: center;
 }
 
 #contact {
-  background-color: #8ac4db;
+  background-color: #0097e6;
   height: 97vh;
+}
+
+#contact .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 900px;
+  margin: auto;
+}
+
+/*Contact*/
+.contact-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 50%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  margin-top: 50px;
+}
+
+.name-wrapper,
+.email-wrapper,
+.phone-wrapper,
+.message-wrapper {
+  position: relative;
+  margin-top: 30px;
+}
+
+.name-wrapper .label-name,
+.email-wrapper .label-email,
+.phone-wrapper .label-phone,
+.message-wrapper .label-message {
+  position: absolute;
+  bottom: 0px;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  border-bottom: 1px solid black;
+  font-size: 18px;
+}
+
+.contact-form label::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-bottom: 3px solid #f5f6fa;
+  left: 0px;
+  bottom: -1px;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+}
+
+.contact-form input,
+textarea {
+  background-color: #0097e6;
+  width: 100%;
+  height: 100%;
+  border: none;
+  padding-top: 20px;
+  outline: none;
+  resize: none;
+}
+
+.content-name,
+.content-email,
+.content-phone,
+.content-message {
+  position: absolute;
+  bottom: 5px;
+  left: 0px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.contact-form input,
+textarea {
+  padding: 15px 0 10px 0;
+  font-size: 18px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.contact-form input:focus + .label-name .content-name,
+input:focus + .label-email .content-email,
+input:focus + .label-phone .content-phone,
+textarea:focus + .label-message .content-message {
+  -webkit-transform: translateY(-150%);
+          transform: translateY(-150%);
+  font-size: 14px;
+  color: white;
+}
+
+.contact-form textarea:focus + .label-message .content-message {
+  -webkit-transform: translateY(-750%);
+          transform: translateY(-750%);
+  font-size: 14px;
+  color: white;
+}
+
+.contact-form input:valid + .label-name .content-name,
+.contact-form input:not(:placeholder-shown) + .label-email .content-email,
+.contact-form input:not(:placeholder-shown) + .label-phone .content-phone {
+  -webkit-transform: translateY(-150%);
+          transform: translateY(-150%);
+  font-size: 14px;
+  color: white;
+}
+
+.contact-form
+textarea:not(:placeholder-shown)
++ .label-message
+.content-message {
+  -webkit-transform: translateY(-750%);
+          transform: translateY(-750%);
+  font-size: 14px;
+  color: white;
+}
+
+.contact-form input:focus + .label-name::after,
+.contact-form input:valid + .label-name::after,
+.contact-form input:focus + .label-email::after,
+.contact-form input:not(:placeholder-shown) + .label-email::after,
+.contact-form input:focus + .label-phone::after,
+.contact-form input:not(:placeholder-shown) + .label-phone::after,
+.contact-form textarea:focus + .label-message::after,
+.contact-form textarea:not(:placeholder-shown) + .label-message::after {
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+}
+
+.section-contact {
+  margin-top: 90px;
+}
+
+.section-contact h3 {
+  font-size: 18px;
+  padding: 20px;
+  margin-left: 100px;
+  letter-spacing: 2px;
 }
 
 footer {
