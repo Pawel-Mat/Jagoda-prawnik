@@ -11,7 +11,9 @@ $color-dark: #363435;
 // $color-three: #43bf84;
 // $color-four: #8ac4db;
 // $color-five: #43bf84;
-$font-title: "Abril Fatface", cursive;
+// $font-title: "Abril Fatface", cursive;
+$font-title: "Cormorant Garamond", serif;
+
 $font-text: "Open Sans", sans-serif;
 
 *,
@@ -73,10 +75,10 @@ section {
 
 h1 {
   padding-top: 15vh;
-  font-size: 56px;
+  font-size: 60px;
   text-align: center;
   font-family: $font-title;
-  letter-spacing: 10px;
+  // letter-spacing: 10px;
   margin-bottom: 50px;
 }
 
@@ -229,6 +231,13 @@ header .wrapper {
   position: relative;
   background: linear-gradient(180deg, $color-two 0%, #7ca2c2 100%);
 }
+
+.services-title::before {
+  content: "§ 1. ";
+  opacity: 0.2;
+  font-size: 90px;
+}
+
 #services .container {
   display: flex;
   justify-content: center;
@@ -255,7 +264,11 @@ header .wrapper {
 #about {
   background: linear-gradient(180deg, #adc5d9, #7ab0db 100%);
 }
-
+.about-title::before {
+  content: "§ 2. ";
+  opacity: 0.2;
+  font-size: 90px;
+}
 #about .container {
   display: flex;
   justify-content: space-between;
@@ -281,6 +294,12 @@ header .wrapper {
   // background-color: $color-four;
   background: linear-gradient(180deg, #82baff 0%, #469bfd 100%);
   height: 97vh;
+  position: relative;
+}
+.contact-title::before {
+  content: "§ 3. ";
+  opacity: 0.2;
+  font-size: 90px;
 }
 #contact .container {
   display: flex;
