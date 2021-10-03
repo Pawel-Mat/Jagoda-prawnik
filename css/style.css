@@ -89,7 +89,7 @@ h2 {
 }
 
 .navigation a {
-  font-size: 40px;
+  font-size: 2vw;
   color: #f8f8f8;
   width: 80px;
   height: 80px;
@@ -197,7 +197,6 @@ header .wrapper .motto {
   right: 80px;
   top: 80px;
   width: 300px;
-  margin: auto;
 }
 
 .arrow,
@@ -330,7 +329,7 @@ header .wrapper .motto {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 980px;
+  width: 50vw;
   margin: auto;
 }
 
@@ -519,6 +518,36 @@ footer {
   }
   100% {
     opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .layout {
+    -ms-scroll-snap-type: none;
+        scroll-snap-type: none;
+  }
+  .orip-logo {
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    width: 200px;
+  }
+  .temida {
+    width: 100%;
+    opacity: 0.2;
+  }
+  .navigation {
+    display: none;
+  }
+  #contact {
+    height: auto;
+  }
+  #contact .container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    width: 90vw;
   }
 }
 /*# sourceMappingURL=style.css.map */
