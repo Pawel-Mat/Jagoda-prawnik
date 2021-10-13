@@ -17,3 +17,24 @@ navigationLinks.forEach((link) => {
     navigation.classList.remove('nav-links-mobile-active');
   });
 })
+
+/// GSAP Animations ///
+
+gsap.from('.temida', {scrollTrigger: {
+  trigger: '#home',
+  start: "top 10%",
+  toggleActions: "play reverse play reverse"}, 
+  scale: 0, 
+  opacity: 0,
+  duration: 5,
+  y: 200,
+  x: 200
+});
+gsap.from('.navigation', {scrollTrigger: {
+  trigger: '#home'}, 
+  // scale: 0, 
+  opacity: 0,
+  duration:1,
+  // delay: 1,
+  x: -100
+});

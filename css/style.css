@@ -186,6 +186,7 @@ header .wrapper {
 
 header .wrapper .name {
   padding-top: 0;
+  margin-bottom: 1em;
 }
 
 header .wrapper .motto {
@@ -267,6 +268,11 @@ header .wrapper .motto {
   display: flex;
 }
 
+.service-wrapper img {
+  -webkit-filter: invert(8%) sepia(67%) saturate(7068%) hue-rotate(358deg) brightness(81%) contrast(96%);
+          filter: invert(8%) sepia(67%) saturate(7068%) hue-rotate(358deg) brightness(81%) contrast(96%);
+}
+
 .service-pic {
   width: 80px;
 }
@@ -274,6 +280,16 @@ header .wrapper .motto {
 .service-wrapper h2 {
   font-size: 32px;
   margin: auto 0 auto 50px;
+}
+
+.weight {
+  opacity: 0.2;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  -webkit-transform: translate(48%, -50%);
+          transform: translate(48%, -50%);
+  width: 50em;
 }
 
 #about {
@@ -709,6 +725,9 @@ footer {
   }
   #services .container .service-pic {
     width: 4em;
+  }
+  .weight {
+    width: 30em;
   }
   #about .container {
     -webkit-box-orient: vertical;
