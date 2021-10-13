@@ -20,6 +20,7 @@ navigationLinks.forEach((link) => {
 /// GSAP Animations ///
 
 // let windowWidth = window.innerWidth;
+if (window.innerWidth >= 600) {
 
 gsap.from('.temida', {scrollTrigger: {
   trigger: '#home',
@@ -33,7 +34,6 @@ gsap.from('.temida', {scrollTrigger: {
 });
 
 
-if (window.innerWidth >= 600) {
   gsap.from('.navigation', {scrollTrigger: {
     trigger: '#home'}, 
     // scale: 0, 
