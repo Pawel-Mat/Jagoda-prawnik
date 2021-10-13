@@ -77,11 +77,11 @@ section {
 
 h1 {
   padding-top: 10vh;
-  font-size: 60px;
+  font-size: 3.5em;
   text-align: center;
   font-family: $font-title;
   // letter-spacing: 10px;
-  margin-bottom: 50px;
+  margin-bottom: 1.5em;
 }
 
 h2 {
@@ -91,25 +91,27 @@ h2 {
 .navigation {
   position: fixed;
   height: 90vh;
-  margin: 3vh;
-  width: 90px;
+  margin: 3vh 3vh 0 1vh;
+  width: 3.5em;
   border-right: 2px solid black;
   z-index: 10;
-  border-radius: 40px;
+  border-radius: 2em;
   & li {
-    border-radius: 40px 0 0 40px;
+    border-radius: 4em 0 0 4em;
+    transition: all 0.2s ease;
   }
   & a {
-    font-size: 28px;
+    font-size: 1.5em;
     color: $color-light;
-    width: 80px;
-    height: 80px;
+    width: 2.4em;
+    height: 3em;
     padding: 10px;
+    margin-right: 1vh;
+    font-weight: bold;
   }
 
   & img {
-    width: 60px;
-    height: 60px;
+    width: 1.5em;
   }
 }
 
@@ -123,7 +125,7 @@ h2 {
 
 .nav-links li {
   letter-spacing: 5px;
-  max-width: 90px;
+  max-width: 30em;
   transition: 0.2s ease;
 
   & a {
@@ -135,13 +137,14 @@ h2 {
 }
 .nav-links span {
   width: 0;
-  height: 80px;
+  height: 3em;
   border-radius: 0 40px 40px 0;
   position: absolute;
   top: 0;
   right: 450px;
   transition: translateY(-70px);
-  padding-top: 15px;
+  padding-top: 0.7em;
+  // font-size: 1em;
   // transition: 0.7s ease;
 }
 
@@ -152,9 +155,9 @@ h2 {
     background-color: $color-light;
   }
   & span {
-    width: 480px;
+    width: 13em;
     color: black;
-    left: 70px;
+    left: 2em;
     background-color: $color-light;
     transition: 0.2s ease;
   }
@@ -518,14 +521,41 @@ footer {
   .layout {
     scroll-snap-type: none;
   }
-  .orip-logo {
-    left: 50%;
-    transform: translateX(-50%);
-    width: 200px;
+  #contact,
+  #services,
+  #about {
+    height: auto;
   }
+  .orip-logo {
+    right: 1.5em;
+    top: 1.5em;
+    // transform: translateX(10%);
+    width: 8em;
+  }
+
   h1 {
-    font-size: 40px;
+    padding-top: 7vh;
+    margin-bottom: 5vh;
+  }
+  .name {
+    font-size: 2.2em;
     width: 80vw;
+    margin-bottom: 0.5em;
+  }
+  .subtitle {
+    font-size: 1em;
+  }
+  header .wrapper {
+    height: 80vh;
+    margin-top: 2em;
+    padding-top: 7em;
+
+    & .motto {
+      font-size: 1em;
+      position: absolute;
+      left: 1vh;
+      bottom: 1vh;
+    }
   }
   .navigation {
     position: relative;
@@ -566,19 +596,24 @@ footer {
     font-size: 24px;
     transition: transform 0.2s ease-in-out;
     transform: translateX(-100vw);
+
+    & li a {
+      text-decoration: none;
+    }
   }
   .nav-links-mobile-active {
     transform: translateX(0vw);
   }
   .nav-links span {
+    // display: unset;
+    position: unset;
     right: 80vw;
-    transition: none;
+    width: 100%;
+    text-align: center;
+    // transition: none;
+    font-size: 0.6em;
+    padding-top: 2em;
   }
-  // .nav-links li:hover {
-  //   display: none;
-  // }
-  // nav {
-  //   position: fixed;
 
   .hamburger {
     display: flex;
@@ -589,9 +624,9 @@ footer {
     cursor: pointer;
     background-color: transparent;
     border: 0;
-    left: 5%;
-    top: 5%;
-    transform: translate(-5%, -50%);
+    left: 1.5em;
+    top: 2.2em;
+    // transform: translate(-5%, -50%);
     outline: none;
     z-index: 999;
   }
@@ -606,7 +641,7 @@ footer {
   @mixin hamburger-line {
     width: 100%;
     height: 3px;
-    background-color: $color-main;
+    background-color: $color-dark;
     position: absolute;
     border-radius: 3px;
   }
@@ -653,11 +688,60 @@ footer {
     width: 100%;
     opacity: 0.2;
   }
-  #contact {
-    height: auto;
+  #services .container {
+    padding: 1em;
+    width: auto;
+    margin-bottom: 5em;
+
+    & .service-wrapper {
+      margin-top: 10px;
+    }
+
+    & h2 {
+      font-size: 1.5em;
+    }
+
+    & .service-pic {
+      width: 4em;
+    }
   }
+
+  #about .container {
+    flex-direction: column;
+    width: 90vw;
+
+    & .image img {
+      width: 80vw;
+    }
+
+    & .about {
+      padding: 3em;
+      & p {
+        font-size: 1.2em;
+        line-height: 2em;
+      }
+    }
+  }
+
   #contact .container {
     flex-direction: column-reverse;
     width: 90vw;
+
+    & h3 {
+      margin: 0;
+      text-align: center;
+    }
+
+    & .contact-form {
+      width: 90%;
+
+      & .btn-send {
+        margin: 4em auto;
+      }
+    }
+  }
+
+  #footer .page-footer {
+    height: 8vh;
   }
 }
