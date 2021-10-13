@@ -3,7 +3,6 @@
 const hamburger = document.querySelector('.hamburger');
 const navigation = document.querySelector('.nav-links');
 const navigationLinks = document.querySelectorAll('.nav-links li');
-console.log(navigationLinks);
 hamburger.addEventListener('click', (e) => {
   e.preventDefault();
   hamburger.classList.toggle('hamburger-active');
@@ -20,6 +19,8 @@ navigationLinks.forEach((link) => {
 
 /// GSAP Animations ///
 
+// let windowWidth = window.innerWidth;
+
 gsap.from('.temida', {scrollTrigger: {
   trigger: '#home',
   start: "top 10%",
@@ -30,11 +31,15 @@ gsap.from('.temida', {scrollTrigger: {
   y: 200,
   x: 200
 });
-gsap.from('.navigation', {scrollTrigger: {
-  trigger: '#home'}, 
-  // scale: 0, 
-  opacity: 0,
-  duration:1,
-  // delay: 1,
-  x: -100
-});
+
+
+if (window.innerWidth >= 600) {
+  gsap.from('.navigation', {scrollTrigger: {
+    trigger: '#home'}, 
+    // scale: 0, 
+    opacity: 0,
+    duration:1,
+    // delay: 1,
+    x: -100
+  });
+}
