@@ -38,15 +38,10 @@ body {
 
 .layout {
   height: 100vh;
-  overflow-y: scroll;
-  -ms-scroll-snap-type: y mandatory;
-      scroll-snap-type: y mandatory;
-  overflow-x: hidden;
   scroll-behavior: smooth;
 }
 
 header {
-  scroll-snap-align: start;
   background: -webkit-gradient(linear, left top, left bottom, from(#adc5d9), to(#7ab0db));
   background: linear-gradient(180deg, #adc5d9, #7ab0db 100%);
   height: 100vh;
@@ -56,7 +51,6 @@ header {
 }
 
 section {
-  scroll-snap-align: start;
   height: 100vh;
   width: 100vw;
   border-bottom: 1px solid #f8f8f8;
@@ -76,7 +70,6 @@ h2 {
 
 .navigation {
   position: fixed;
-  height: 90vh;
   margin: 3vh 3vh 0 1vh;
   width: 3.5em;
   border-right: 2px solid black;
@@ -277,19 +270,20 @@ header .wrapper .motto {
   width: 80px;
 }
 
+.line {
+  position: absolute;
+  bottom: -25px;
+  width: 100%;
+  height: 50px;
+  -webkit-transform: skewY(1.5deg);
+          transform: skewY(1.5deg);
+  background-color: #ebebeb;
+  z-index: 5;
+}
+
 .service-wrapper h2 {
   font-size: 32px;
   margin: auto 0 auto 50px;
-}
-
-.weight {
-  opacity: 0.2;
-  position: absolute;
-  right: 0;
-  top: 50%;
-  -webkit-transform: translate(48%, -50%);
-          transform: translate(48%, -50%);
-  width: 50em;
 }
 
 #about {

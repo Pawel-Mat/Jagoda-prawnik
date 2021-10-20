@@ -19,8 +19,19 @@ navigationLinks.forEach((link) => {
 
 /// GSAP Animations ///
 
-// let windowWidth = window.innerWidth;
+gsap.registerPlugin(ScrollTrigger)
+
 if (window.innerWidth >= 600) {
+
+  
+  
+  gsap.from('.navigation', {scrollTrigger: {
+    trigger: '#home'}, 
+    opacity: 0,
+    duration:1,
+    x: -100
+  });
+};
 
 gsap.from('.temida', {scrollTrigger: {
   trigger: '#home',
@@ -32,14 +43,27 @@ gsap.from('.temida', {scrollTrigger: {
   y: 200,
   x: 200
 });
+const tlServices = gsap.timeline({scrollTrigger: {
+  trigger: ".services", 
+  start: "top 50%",
+  end: "bottom -20%",
+  markers: true,
+  // toggleActions: "play none none reverse",
+  duration: 1}});
 
-
-  gsap.from('.navigation', {scrollTrigger: {
-    trigger: '#home'}, 
-    // scale: 0, 
+  tlServices.from('.service-wrapper h2', {
+    y:100, 
+    duration: 1,
     opacity: 0,
-    duration:1,
-    // delay: 1,
-    x: -100
+    stagger: 0.18,
   });
-}
+  tlServices.from('.service-pic', {
+    x:-1000, 
+    duration: 1,
+    opacity: 0,
+    stagger: 0.25,
+    rotate: 720
+  }, "-=2.2");
+
+
+
