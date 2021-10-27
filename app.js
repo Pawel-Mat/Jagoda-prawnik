@@ -44,7 +44,7 @@ gsap.from('.temida', {scrollTrigger: {
   x: 200
 });
 const tlServices = gsap.timeline({scrollTrigger: {
-  trigger: ".services", 
+  trigger: ".layout .services", 
   start: "top 50%",
   end: "bottom -20%",
   markers: true,

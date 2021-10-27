@@ -45,20 +45,21 @@ $font-text: "Open Sans", sans-serif;
 
 body {
   overflow-x: hidden;
+  // overflow-y: hidden;
   font-family: $font-text;
   color: #011826;
   // background-color: $color-light;
+  // scroll-behavior: smooth;
 }
 .layout {
-  height: 100vh;
-  // overflow-y: scroll;
-  // overflow-y: hidden;
-  // scroll-snap-type: y mandatory;
-  // overflow-x: hidden;
   scroll-behavior: smooth;
+  // height: 100vh;
+  overflow-y: hidden;
+  scroll-snap-type: y mandatory;
+  overflow-x: hidden;
 }
 header {
-  // scroll-snap-align: start;
+  scroll-snap-align: start;
   // background-color: $color-main;
   // background: linear-gradient(180deg, $color-main 0%, #6ca0db 100%);
   background: linear-gradient(180deg, #adc5d9, #7ab0db 100%);
@@ -700,18 +701,19 @@ footer {
   #services .container {
     padding: 1em;
     width: auto;
-    margin-bottom: 5em;
+    margin: 0 2em 5em 2em;
 
     & .service-wrapper {
-      margin-top: 10px;
+      margin-top: 3em;
+      margin-left: 10px;
     }
 
     & h2 {
-      font-size: 1.5em;
+      font-size: 1.2em;
     }
 
     & .service-pic {
-      width: 4em;
+      width: 3em;
     }
   }
 
