@@ -163,14 +163,14 @@ h2 {
 
 .temida {
   position: absolute;
-  width: 30%;
+  width: 40%;
   right: 0;
   bottom: 0;
 }
 
 header .wrapper {
   position: absolute;
-  left: 50%;
+  left: 30%;
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
