@@ -43,25 +43,22 @@ $font-text: "Open Sans", sans-serif;
   box-shadow: inset 0px -0.2px 24px -25px #f0f0f0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
 body {
   overflow-x: hidden;
-  // overflow-y: hidden;
   font-family: $font-text;
   color: #011826;
-  // background-color: $color-light;
-  // scroll-behavior: smooth;
 }
-.layout {
-  scroll-behavior: smooth;
-  // height: 100vh;
-  overflow-y: hidden;
-  scroll-snap-type: y mandatory;
-  overflow-x: hidden;
-}
+// .layout {
+//   scroll-behavior: smooth;
+//   // height: 100vh;
+//   overflow-y: hidden;
+//   scroll-snap-type: y mandatory;
+//   overflow-x: hidden;
+// }
 header {
-  scroll-snap-align: start;
-  // background-color: $color-main;
-  // background: linear-gradient(180deg, $color-main 0%, #6ca0db 100%);
   background: linear-gradient(180deg, #adc5d9, #7ab0db 100%);
   height: 100vh;
   width: 100vw;
@@ -71,7 +68,7 @@ header {
 
 section {
   // scroll-snap-align: start;
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
   border-bottom: 1px solid $color-light;
   // margin: 2vh;
@@ -139,6 +136,7 @@ h2 {
     justify-content: center;
     text-align: center;
     position: relative;
+    transition: 0.2s ease;
   }
 }
 .nav-links span {
@@ -148,7 +146,7 @@ h2 {
   position: absolute;
   top: 0;
   right: 450px;
-  transition: translateY(-70px);
+  // transition: translateY(-70px);
   padding-top: 0.7em;
   // font-size: 1em;
   // transition: 0.7s ease;
@@ -190,7 +188,7 @@ header .wrapper {
   transform: translate(-50%, -50%);
   & .name {
     padding-top: 0;
-    margin-bottom: 1em;
+    margin-bottom: 0.5em;
   }
   & .motto {
     font-style: italic;
@@ -201,7 +199,7 @@ header .wrapper {
 }
 
 .subtitle {
-  text-align: center;
+  text-align: left;
 }
 
 .orip-logo {
@@ -237,6 +235,7 @@ header .wrapper {
 }
 
 /////////////////*Services*/////////////////
+
 #services {
   position: relative;
   background: linear-gradient(180deg, #dadada 0%, #e6e6e6 100%);
@@ -259,6 +258,7 @@ header .wrapper {
 
 .service-wrapper {
   display: flex;
+  margin-bottom: 2em;
 
   & img {
     filter: invert(8%) sepia(67%) saturate(7068%) hue-rotate(358deg)
@@ -468,25 +468,12 @@ textarea:focus + .label-message .content-message {
   margin-left: 80px;
   letter-spacing: 2px;
 }
-
-// .btn-send {
-//   margin-top: 20px;
-//   width: 150px;
-//   height: 50px;
-//   background-color: $color-light;
-//   color: black;
-//   border-radius: 10px;
-//   font-size: 18px;
-// }
-// .btn-send:hover {
-//   background-color: rgb(128, 132, 179);
-// }
 .btn-send {
   background-color: $color-dark;
   border-radius: 0.6em;
   font-size: 18px;
   cursor: pointer;
-  margin-top: 20px;
+  margin-top: 5em;
   letter-spacing: 2px;
   width: 150px;
   height: 50px;
