@@ -22,7 +22,7 @@ navigationLinks.forEach((link) => {
 gsap.registerPlugin(ScrollTrigger)
 
 if (window.innerWidth >= 600) {
-
+  
   
   
   gsap.from('.navigation', {scrollTrigger: {
@@ -31,6 +31,59 @@ if (window.innerWidth >= 600) {
     duration:1,
     x: -100
   });
+  gsap.from('.image', {scrollTrigger: {
+    trigger: '#about',
+    toggleActions: "play reverse play reverse"}, 
+    opacity: 0,
+    delay: 1,
+    duration:3,
+  });
+  gsap.from('.about', {scrollTrigger: {
+    trigger: '#about',
+    toggleActions: "play reverse play reverse"}, 
+    opacity: 0,
+    delay: 1,
+    duration:1,
+    x: 1000
+  });
+  
+  
+  
+  
+  
+  const tlContact = gsap.timeline({scrollTrigger: {
+    trigger: "#contact", 
+    start: "top 50%",
+    end: "bottom -20%",
+    toggleActions: "play reverse play reverse",
+    }});
+  
+    tlContact.from('.name-wrapper', {
+      x:-1000,
+      duration: 0.3
+    });
+    tlContact.from('.email-wrapper', {
+      x:-1000,
+      duration: 0.3
+    });
+    tlContact.from('.phone-wrapper', {
+      x:-1000
+    });
+    tlContact.from('.message-wrapper', {
+      x:-1000,
+      duration: 0.3
+    });
+    tlContact.fromTo('.contact-form span', {
+      opacity: 0, y: 50}, {opacity: 1, y: 0}    
+      );
+      gsap.from('.section-contact', {scrollTrigger: {
+        trigger: '#contact',
+        toggleActions: "play reverse play reverse"}, 
+        opacity: 0,
+        delay: 0.5,
+        duration:1,
+        x: 1000
+      });
 };
 gsap.from('.services-title', {scrollTrigger: {
   trigger: '#services',
@@ -55,21 +108,6 @@ gsap.from('.contact-title', {scrollTrigger: {
   delay: 0.5,
   duration:1,
   scale: 0
-});
-gsap.from('.image', {scrollTrigger: {
-  trigger: '#about',
-  toggleActions: "play reverse play reverse"}, 
-  opacity: 0,
-  delay: 1,
-  duration:3,
-});
-gsap.from('.about', {scrollTrigger: {
-  trigger: '#about',
-  toggleActions: "play reverse play reverse"}, 
-  opacity: 0,
-  delay: 1,
-  duration:1,
-  x: 1000
 });
 gsap.from('.temida', {scrollTrigger: {
   trigger: '#home',
@@ -103,39 +141,6 @@ const tlServices = gsap.timeline({scrollTrigger: {
     rotate: 720
   }, "-=2.2");
 
-  const tlContact = gsap.timeline({scrollTrigger: {
-    trigger: "#contact", 
-    start: "top 50%",
-    end: "bottom -20%",
-    toggleActions: "play reverse play reverse",
-    }});
-
-    tlContact.from('.name-wrapper', {
-      x:-1000,
-      duration: 0.3
-    });
-    tlContact.from('.email-wrapper', {
-      x:-1000,
-      duration: 0.3
-    });
-    tlContact.from('.phone-wrapper', {
-      x:-1000
-    });
-    tlContact.from('.message-wrapper', {
-      x:-1000,
-      duration: 0.3
-    });
-    tlContact.fromTo('.contact-form span', {
-      opacity: 0, y: 50}, {opacity: 1, y: 0}    
-      );
-      gsap.from('.section-contact', {scrollTrigger: {
-        trigger: '#contact',
-        toggleActions: "play reverse play reverse"}, 
-        opacity: 0,
-        delay: 0.5,
-        duration:1,
-        x: 1000
-      });
 
 
 

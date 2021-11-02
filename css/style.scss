@@ -495,13 +495,17 @@ textarea:focus + .label-message .content-message {
 }
 
 footer {
-  height: 3vh;
+  min-height: 3vh;
   width: 100vw;
   background-color: #363636;
   color: rgb(175, 175, 175);
   text-align: center;
   padding: 5px;
   font-size: 15px;
+
+  & p {
+    font-size: 1em;
+  }
 }
 
 @keyframes arrow {
@@ -515,9 +519,6 @@ footer {
 }
 
 @media only screen and (max-width: 600px) {
-  .layout {
-    scroll-snap-type: none;
-  }
   #contact,
   #services,
   #about {
@@ -533,6 +534,7 @@ footer {
   h1 {
     padding-top: 7vh;
     margin-bottom: 5vh;
+    font-size: 3em;
   }
   .name {
     font-size: 2.2em;
@@ -541,11 +543,13 @@ footer {
   }
   .subtitle {
     font-size: 1em;
+    text-align: center;
   }
   header .wrapper {
     height: 80vh;
     margin-top: 2em;
     padding-top: 7em;
+    left: 50%;
 
     & .motto {
       font-size: 1em;

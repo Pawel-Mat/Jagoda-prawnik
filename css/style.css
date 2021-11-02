@@ -511,13 +511,17 @@ textarea:not(:placeholder-shown)
 }
 
 footer {
-  height: 3vh;
+  min-height: 3vh;
   width: 100vw;
   background-color: #363636;
   color: #afafaf;
   text-align: center;
   padding: 5px;
   font-size: 15px;
+}
+
+footer p {
+  font-size: 1em;
 }
 
 @-webkit-keyframes arrow {
@@ -539,10 +543,6 @@ footer {
 }
 
 @media only screen and (max-width: 600px) {
-  .layout {
-    -ms-scroll-snap-type: none;
-        scroll-snap-type: none;
-  }
   #contact,
   #services,
   #about {
@@ -556,6 +556,7 @@ footer {
   h1 {
     padding-top: 7vh;
     margin-bottom: 5vh;
+    font-size: 3em;
   }
   .name {
     font-size: 2.2em;
@@ -564,11 +565,13 @@ footer {
   }
   .subtitle {
     font-size: 1em;
+    text-align: center;
   }
   header .wrapper {
     height: 80vh;
     margin-top: 2em;
     padding-top: 7em;
+    left: 50%;
   }
   header .wrapper .motto {
     font-size: 1em;
