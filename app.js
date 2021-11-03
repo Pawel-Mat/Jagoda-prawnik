@@ -74,7 +74,7 @@ if (window.innerWidth >= 600) {
       duration: 0.3
     });
     tlContact.fromTo('.contact-form span', {
-      opacity: 0, y: 50}, {opacity: 1, y: 0}    
+      opacity: 0}, {opacity: 1}    
       );
       gsap.from('.section-contact', {scrollTrigger: {
         trigger: '#contact',
