@@ -1,6 +1,5 @@
 $color-main: #50a0bf;
 $color-light: #f8f8f8;
-// $color-light: #283377;
 $color-two: #6496be;
 $color-three: #96c6d9;
 $color-four: #adc5d9;
@@ -8,14 +7,7 @@ $color-five: #8bb9ee;
 $color-font: #363435;
 $color-dark: #363435;
 
-// $color-light: #bed6f7;
-// $color-two: #c73117;
-// $color-three: #43bf84;
-// $color-four: #8ac4db;
-// $color-five: #43bf84;
-// $font-title: "Abril Fatface", cursive;
 $font-title: "Cormorant Garamond", serif;
-
 $font-text: "Open Sans", sans-serif;
 
 *,
@@ -46,18 +38,13 @@ $font-text: "Open Sans", sans-serif;
 html {
   scroll-behavior: smooth;
 }
+
 body {
   overflow-x: hidden;
   font-family: $font-text;
   color: #011826;
 }
-// .layout {
-//   scroll-behavior: smooth;
-//   // height: 100vh;
-//   overflow-y: hidden;
-//   scroll-snap-type: y mandatory;
-//   overflow-x: hidden;
-// }
+
 header {
   background: linear-gradient(180deg, #adc5d9, #7ab0db 100%);
   height: 100vh;
@@ -67,11 +54,9 @@ header {
 }
 
 section {
-  // scroll-snap-align: start;
   min-height: 100vh;
-  width: 100vw;
+  width: 100%;
   border-bottom: 1px solid $color-light;
-  // margin: 2vh;
 }
 
 h1 {
@@ -79,7 +64,6 @@ h1 {
   font-size: 3.5em;
   text-align: center;
   font-family: $font-title;
-  // letter-spacing: 10px;
   margin-bottom: 1.5em;
 }
 
@@ -89,16 +73,21 @@ h2 {
 
 .navigation {
   position: fixed;
-  // height: 97vh;
   margin: 3vh 3vh 0 1vh;
   width: 3.5em;
   border-right: 2px solid black;
   z-index: 10;
   border-radius: 2em;
+  height: 93vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
   & li {
     border-radius: 4em 0 0 4em;
     transition: all 0.2s ease;
   }
+
   & a {
     font-size: 1.5em;
     color: $color-light;
@@ -112,10 +101,21 @@ h2 {
   & img {
     width: 1.5em;
   }
-  // & .active {
-  //   filter: invert(100%) sepia(0%) saturate(324%) hue-rotate(235deg)
-  //     brightness(112%) contrast(95%);
-  // }
+}
+.lang-wrapper {
+  margin-bottom: 2em;
+}
+
+.lang-wrapper a {
+  padding: 10px;
+  cursor: pointer;
+  color: rgb(31, 31, 31);
+  opacity: 0.3;
+}
+
+.lang-wrapper .active {
+  opacity: 1;
+  // color: red;
 }
 
 .nav-links {
@@ -139,6 +139,7 @@ h2 {
     transition: 0.2s ease;
   }
 }
+
 .nav-links span {
   width: 0;
   height: 3em;
@@ -146,10 +147,7 @@ h2 {
   position: absolute;
   top: 0;
   right: 450px;
-  // transition: translateY(-70px);
   padding-top: 0.7em;
-  // font-size: 1em;
-  // transition: 0.7s ease;
 }
 
 .nav-links li:hover {
@@ -158,6 +156,7 @@ h2 {
   & li {
     background-color: $color-light;
   }
+
   & span {
     width: 13em;
     color: black;
@@ -165,11 +164,8 @@ h2 {
     background-color: $color-light;
     transition: 0.2s ease;
   }
-  // & img {
-  //   filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(155deg)
-  //     brightness(103%) contrast(105%);
-  // }
 }
+
 .hamburger {
   display: none;
 }
@@ -191,10 +187,12 @@ header .wrapper {
     width: 10em;
     margin-bottom: 5em;
   }
+
   & .name {
     padding-top: 0;
     margin-bottom: 0.5em;
   }
+
   & .motto {
     font-style: italic;
     margin-top: 15vh;
@@ -212,31 +210,6 @@ header .wrapper {
   right: 80px;
   top: 80px;
   width: 300px;
-  // height: 100px;
-  // margin: auto;
-}
-
-.arrow,
-.arrow:before,
-.arrow:after {
-  position: absolute;
-  left: 50%;
-}
-
-.arrow {
-  top: 120%;
-  -webkit-transform: rotate(45deg);
-  width: 25px;
-  height: 25px;
-  // top: 50%;
-  margin: 10px 0 0 10px;
-  border-left: none;
-  border-top: none;
-  border-right: 1px #fff solid;
-  border-bottom: 1px #fff solid;
-  animation-duration: 2s;
-  animation-iteration-count: infinite;
-  animation-name: arrow;
 }
 
 /////////////////*Services*/////////////////
@@ -249,6 +222,11 @@ header .wrapper {
 .services-title::before {
   content: "§ 1. ";
   opacity: 0.2;
+  font-size: 90px;
+}
+.services-title::after {
+  content: "§ 1. ";
+  opacity: 0;
   font-size: 90px;
 }
 
@@ -283,27 +261,12 @@ header .wrapper {
   transform: skewY(1.5deg);
   background-color: #ebebeb;
   z-index: 5;
-  // margin: 75px auto 0;
 }
 
 .service-wrapper h2 {
   font-size: 32px;
   margin: auto 0 auto 50px;
 }
-// .img-wrapper {
-//   position: absolute;
-//   right: 0;
-//   max-width: 1000px;
-//   height: 300px;
-// }
-// .weight {
-//   opacity: 0.2;
-//   position: absolute;
-//   right: 0;
-//   bottom: 0;
-//   transform: translateY(-50%);
-//   width: 20em;
-// }
 
 //////////////////*About*//////////////////////
 
@@ -313,6 +276,11 @@ header .wrapper {
 .about-title::before {
   content: "§ 2. ";
   opacity: 0.2;
+  font-size: 90px;
+}
+.about-title::after {
+  content: "§ 2. ";
+  opacity: 0;
   font-size: 90px;
 }
 #about .container {
@@ -327,7 +295,7 @@ header .wrapper {
   width: 400px;
 }
 
-#about p {
+.about {
   font-size: 24px;
   font-weight: 700;
   line-height: 1.5;
@@ -337,16 +305,22 @@ header .wrapper {
 //////////////////*Contact*/////////////////////////
 
 #contact {
-  // background-color: $color-four;
   background: linear-gradient(180deg, #dadada 0%, #e6e6e6 100%);
   height: 97vh;
   position: relative;
 }
+
 .contact-title::before {
   content: "§ 3. ";
   opacity: 0.2;
   font-size: 90px;
 }
+.contact-title::after {
+  content: "§ 3. ";
+  opacity: 0;
+  font-size: 90px;
+}
+
 #contact .container {
   display: flex;
   justify-content: space-between;
@@ -361,7 +335,6 @@ header .wrapper {
   flex-direction: column;
   position: relative;
   overflow: hidden;
-  // margin-top: 50px;
 }
 
 .name-wrapper,
@@ -385,6 +358,7 @@ header .wrapper {
   border-bottom: 1px solid black;
   font-size: 18px;
 }
+
 .contact-form label::after {
   content: "";
   position: absolute;
@@ -408,10 +382,10 @@ textarea {
   resize: none;
 }
 
-.content-name,
-.content-email,
-.content-phone,
-.content-message {
+.contact-name,
+.contact-email,
+.contact-phone,
+.contact-message {
   position: absolute;
   bottom: 5px;
   left: 0px;
@@ -427,22 +401,24 @@ textarea {
   letter-spacing: 2px;
 }
 
-.contact-form input:focus + .label-name .content-name,
-input:focus + .label-email .content-email,
-input:focus + .label-phone .content-phone,
-textarea:focus + .label-message .content-message {
+.contact-form input:focus + .label-name .contact-name,
+input:focus + .label-email .contact-email,
+input:focus + .label-phone .contact-phone,
+textarea:focus + .label-message .contact-message {
   transform: translateY(-230%);
   font-size: 14px;
   color: #678fb1;
 }
-.contact-form textarea:focus + .label-message .content-message {
+
+.contact-form textarea:focus + .label-message .contact-message {
   transform: translateY(-825%);
   font-size: 14px;
   color: #678fb1;
 }
-.contact-form input:valid + .label-name .content-name,
-.contact-form input:not(:placeholder-shown) + .label-email .content-email,
-.contact-form input:not(:placeholder-shown) + .label-phone .content-phone {
+
+.contact-form input:valid + .label-name .contact-name,
+.contact-form input:not(:placeholder-shown) + .label-email .contact-email,
+.contact-form input:not(:placeholder-shown) + .label-phone .contact-phone {
   transform: translateY(-230%);
   font-size: 14px;
   color: #678fb1;
@@ -451,7 +427,7 @@ textarea:focus + .label-message .content-message {
 .contact-form
   textarea:not(:placeholder-shown)
   + .label-message
-  .content-message {
+  .contact-message {
   transform: translateY(-825%);
   font-size: 14px;
   color: #678fb1;
@@ -474,6 +450,7 @@ textarea:focus + .label-message .content-message {
   margin-left: 80px;
   letter-spacing: 2px;
 }
+
 .btn-send {
   background-color: $color-dark;
   border-radius: 0.6em;
@@ -495,11 +472,13 @@ textarea:focus + .label-message .content-message {
   background-size: 400%;
   transition: background 300ms ease-in-out;
 }
+
 .btn-send:hover {
   background-position: 0;
   color: $color-dark;
 }
 
+//////////// Footer /////////////////
 footer {
   min-height: 3vh;
   width: 100vw;
@@ -513,16 +492,7 @@ footer {
     font-size: 1em;
   }
 }
-
-@keyframes arrow {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-    // transform: translate(50px, 50px);
-  }
-}
+/////////// Media //////////////////
 
 @media only screen and (max-width: 600px) {
   #contact,
@@ -533,7 +503,6 @@ footer {
   .orip-logo {
     right: 1.5em;
     top: 1.5em;
-    // transform: translateX(10%);
     width: 8em;
   }
 
@@ -542,15 +511,18 @@ footer {
     margin-bottom: 5vh;
     font-size: 3em;
   }
+
   .name {
     font-size: 2.2em;
     width: 80vw;
     margin-bottom: 0.5em;
   }
+
   .subtitle {
     font-size: 1em;
     text-align: center;
   }
+
   header .wrapper {
     height: 80vh;
     margin-top: 2em;
@@ -564,6 +536,7 @@ footer {
       bottom: 1vh;
     }
   }
+
   .navigation {
     position: relative;
     margin: 0;
@@ -584,9 +557,11 @@ footer {
       // background-color: brown;
     }
   }
+
   .nav-links {
     display: none;
   }
+
   .nav-links-mobile {
     position: fixed;
     left: 0;
@@ -608,16 +583,16 @@ footer {
       text-decoration: none;
     }
   }
+
   .nav-links-mobile-active {
     transform: translateX(0vw);
   }
+
   .nav-links span {
-    // display: unset;
     position: unset;
     right: 80vw;
     width: 100%;
     text-align: center;
-    // transition: none;
     font-size: 0.6em;
     padding-top: 2em;
   }
@@ -633,7 +608,6 @@ footer {
     border: 0;
     left: 1.5em;
     top: 2.2em;
-    // transform: translate(-5%, -50%);
     outline: none;
     z-index: 999;
   }
@@ -655,10 +629,8 @@ footer {
 
   .hamburger-inner {
     @include hamburger-line;
-
     left: 0;
     top: 50%;
-    // transform: translateY(-50%);
     transition: background-color 0.3s 0.1s ease-in-out;
   }
 

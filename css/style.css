@@ -51,7 +51,7 @@ header {
 
 section {
   min-height: 100vh;
-  width: 100vw;
+  width: 100%;
   border-bottom: 1px solid #f8f8f8;
 }
 
@@ -74,6 +74,17 @@ h2 {
   border-right: 2px solid black;
   z-index: 10;
   border-radius: 2em;
+  height: 93vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .navigation li {
@@ -94,6 +105,21 @@ h2 {
 
 .navigation img {
   width: 1.5em;
+}
+
+.lang-wrapper {
+  margin-bottom: 2em;
+}
+
+.lang-wrapper a {
+  padding: 10px;
+  cursor: pointer;
+  color: #1f1f1f;
+  opacity: 0.3;
+}
+
+.lang-wrapper .active {
+  opacity: 1;
 }
 
 .nav-links {
@@ -204,31 +230,6 @@ header .wrapper .motto {
   width: 300px;
 }
 
-.arrow,
-.arrow:before,
-.arrow:after {
-  position: absolute;
-  left: 50%;
-}
-
-.arrow {
-  top: 120%;
-  -webkit-transform: rotate(45deg);
-  width: 25px;
-  height: 25px;
-  margin: 10px 0 0 10px;
-  border-left: none;
-  border-top: none;
-  border-right: 1px #fff solid;
-  border-bottom: 1px #fff solid;
-  -webkit-animation-duration: 2s;
-          animation-duration: 2s;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
-  -webkit-animation-name: arrow;
-          animation-name: arrow;
-}
-
 #services {
   position: relative;
   background: -webkit-gradient(linear, left top, left bottom, from(#dadada), to(#e6e6e6));
@@ -238,6 +239,12 @@ header .wrapper .motto {
 .services-title::before {
   content: "§ 1. ";
   opacity: 0.2;
+  font-size: 90px;
+}
+
+.services-title::after {
+  content: "§ 1. ";
+  opacity: 0;
   font-size: 90px;
 }
 
@@ -303,6 +310,12 @@ header .wrapper .motto {
   font-size: 90px;
 }
 
+.about-title::after {
+  content: "§ 2. ";
+  opacity: 0;
+  font-size: 90px;
+}
+
 #about .container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -322,7 +335,7 @@ header .wrapper .motto {
   width: 400px;
 }
 
-#about p {
+.about {
   font-size: 24px;
   font-weight: 700;
   line-height: 1.5;
@@ -339,6 +352,12 @@ header .wrapper .motto {
 .contact-title::before {
   content: "§ 3. ";
   opacity: 0.2;
+  font-size: 90px;
+}
+
+.contact-title::after {
+  content: "§ 3. ";
+  opacity: 0;
   font-size: 90px;
 }
 
@@ -418,10 +437,10 @@ textarea {
   resize: none;
 }
 
-.content-name,
-.content-email,
-.content-phone,
-.content-message {
+.contact-name,
+.contact-email,
+.contact-phone,
+.contact-message {
   position: absolute;
   bottom: 5px;
   left: 0px;
@@ -438,26 +457,26 @@ textarea {
   letter-spacing: 2px;
 }
 
-.contact-form input:focus + .label-name .content-name,
-input:focus + .label-email .content-email,
-input:focus + .label-phone .content-phone,
-textarea:focus + .label-message .content-message {
+.contact-form input:focus + .label-name .contact-name,
+input:focus + .label-email .contact-email,
+input:focus + .label-phone .contact-phone,
+textarea:focus + .label-message .contact-message {
   -webkit-transform: translateY(-230%);
           transform: translateY(-230%);
   font-size: 14px;
   color: #678fb1;
 }
 
-.contact-form textarea:focus + .label-message .content-message {
+.contact-form textarea:focus + .label-message .contact-message {
   -webkit-transform: translateY(-825%);
           transform: translateY(-825%);
   font-size: 14px;
   color: #678fb1;
 }
 
-.contact-form input:valid + .label-name .content-name,
-.contact-form input:not(:placeholder-shown) + .label-email .content-email,
-.contact-form input:not(:placeholder-shown) + .label-phone .content-phone {
+.contact-form input:valid + .label-name .contact-name,
+.contact-form input:not(:placeholder-shown) + .label-email .contact-email,
+.contact-form input:not(:placeholder-shown) + .label-phone .contact-phone {
   -webkit-transform: translateY(-230%);
           transform: translateY(-230%);
   font-size: 14px;
@@ -467,7 +486,7 @@ textarea:focus + .label-message .content-message {
 .contact-form
 textarea:not(:placeholder-shown)
 + .label-message
-.content-message {
+.contact-message {
   -webkit-transform: translateY(-825%);
           transform: translateY(-825%);
   font-size: 14px;
@@ -528,24 +547,6 @@ footer {
 
 footer p {
   font-size: 1em;
-}
-
-@-webkit-keyframes arrow {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes arrow {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
 }
 
 @media only screen and (max-width: 600px) {
